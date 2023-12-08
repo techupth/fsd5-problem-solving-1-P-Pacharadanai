@@ -1,7 +1,17 @@
 //Exercise 2: Valid Palindrome
 
-const isPalindrome = function (s) {
-  //Start Coding here
+const isPalindrome = function (sentence) {
+  //Start Coding heresa
+  let cleanSentence = "";
+  let reverseCleanSentence = "";
+  for (let letter of sentence) {
+    const lowerCaseLetter = letter.toLowerCase();
+    if ((lowerCaseLetter >= "a" && lowerCaseLetter <= "z") || (letter >= "0" && letter <= "9")) {
+      cleanSentence += lowerCaseLetter;
+      reverseCleanSentence = lowerCaseLetter + reverseCleanSentence;
+    }
+  }
+  return cleanSentence === reverseCleanSentence;
 };
 
 const result1 = isPalindrome("A man, a plan, a canal: Panama");
